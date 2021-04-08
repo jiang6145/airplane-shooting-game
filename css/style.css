@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: url('../images/start-bg.jpg') no-repeat center / cover;
+  font-family: '微軟正黑體';
+  user-select: none;
+}
+
+#btns-wrap {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+.btn {
+  padding: 10px 10px 10px 30px;
+  margin-bottom: 50px;
+  transition: 0.3s;
+  display: block;
+  outline: none;
+  background: rgba(80, 160, 164, 0.3);
+  border: 3px solid rgba(80, 160, 164, 0.5);
+  color: rgba(180, 230, 233, 0.8);
+  letter-spacing: 20px;
+  font-size: 36px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: rgba(142, 228, 233, 0.5);
+  border: 3px solid rgba(142, 228, 233, 0.6);
+  color: rgba(214, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(142, 228, 233, 0.9);
+}
+.btn-rule {
+  margin-left: 50px;
+}
+.text-highscore {
+  display: inline-block;
+  margin-left: 100px;
+  letter-spacing: 5px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 50px;
+  color: rgb(162, 212, 214);
+  text-shadow: 0 0 20px rgba(142, 228, 233, 0.9);
+}
+.text-highscore::before {
+  content: '最高分紀錄:';
+  font-size: 26px;
+  margin-right: 10px;
+}
+
+#rule-wrap {
+  display: none;
+  position: absolute;
+  right: 30%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+#rule-wrap p {
+  margin-top: 30px;
+  text-align: center;
+}
+#rule-wrap img {
+  vertical-align: middle;
+}
+#game {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  background-color: #000;
+  cursor: none;
+}
+.player,
+.player-bullet,
+.enemy,
+.enemy-bullet,
+.supply {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 1;
+}
+.player {
+  display: none;
+  width: 100px;
+  height: 118px;
+  background-image: url('../images/player.png');
+}
+.player-bullet {
+  width: 18px;
+  height: 74px;
+  background-image: url('../images/player-bullet.png');
+}
+.enemy1 {
+  width: 100px;
+  height: 83px;
+  background-image: url('../images/enemy1.png');
+}
+.enemy2 {
+  width: 80px;
+  height: 58px;
+  background-image: url('../images/enemy2.png');
+}
+.enemy-bullet {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url('../images/enemy-bullet2.png');
+}
+.supply {
+  width: 50px;
+  height: 50px;
+}
+.supply.tonic {
+  background-image: url('../images/supply-tonic.png');
+}
+.supply.addShootSpeed {
+  background-image: url('../images/supply-addShootSpeed.png');
+}
+.supply.shotgun {
+  background-image: url('../images/supply-shotgun.png');
+}
+
+.player-status {
+  position: absolute;
+  bottom: 0;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: rgb(136, 213, 216);
+  text-shadow: 0 0 10px rgb(157, 213, 216);
+}
+.player-status > div {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.text-hp > i {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  background: url('../images/hp-icon.png') no-repeat center / contain;
+}
+.text-score:before,
+.text-shoot-speed:before,
+.text-arms:before {
+  margin-right: 15px;
+  font-size: 16px;
+}
+.text-score:before {
+  content: '分數:';
+}
+.text-shoot-speed:before {
+  content: '射擊速度:';
+}
+.text-arms:before {
+  content: '武器:';
+}
